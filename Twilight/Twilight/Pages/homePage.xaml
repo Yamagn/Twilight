@@ -11,15 +11,23 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding User.ProfileImageUrl}" HeightRequest="20"/>
-                                <Label Text="{Binding User.Name}" VerticalOptions="Start" HorizontalOptions="Start" FontAttributes="Bold"/>
-                                <Label Text="{Binding User.ScreenName}" VerticalOptions="Start" HorizontalOptions="Start" FontAttributes="Bold"/>
-                                
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding User.ProfileImageUrl}" HeightRequest="30" WidthRequest="30" VerticalOptions="Start" Margin="5, 5, 5, 0"/>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding User.Name}" VerticalOptions="Start" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                    <Label Text="{Binding User.ScreenName}" VerticalOptions="Start" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                </StackLayout>
+                                <Label Text="{Binding Text}" VerticalOptions="Start" HorizontalOptions="Start" LineBreakMode="CharacterWrap"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Button Image="heart.png" Clicked="fav_Clicked" HeightRequest="16" WidthRequest="16"/>
+                                    <Label Text="{Binding FavoriteCount}"/>
+                                    <Button Image="retweet.png" Clicked="RT_Clicked" HeightRequest="16" WidthRequest="16"/>
+                                    <Label Text="{Binding RetweetCount}"/>
+                                </StackLayout>
                             </StackLayout>
-                            <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center" LineBreakMode="CharacterWrap"/>
                         </StackLayout>
+                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

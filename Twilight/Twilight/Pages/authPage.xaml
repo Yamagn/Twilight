@@ -4,7 +4,7 @@
              x:Class="Twilight.Pages.authPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="pin" Placeholder="PINコード" Keyboard="Numeric" MaxLength="7"/>
+            <Entry x:Name="pin" Placeholder="PINコード" Keyboard="Numeric" MaxLength="7" VerticalOptions="Center"/>
             <Button x:Name="submit" Text="送信" HorizontalOptions="Center" Clicked="submit_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

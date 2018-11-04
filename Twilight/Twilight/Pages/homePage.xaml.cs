@@ -23,7 +23,7 @@ namespace Twilight.Pages
             }
             else
             {
-                timeLine.ItemsSource = await App.tokens.Statuses.HomeTimelineAsync(count => 50);
+                timeLine.ItemsSource = await App.tokens.Statuses.HomeTimelineAsync(count => 100);
             }
         }
 
@@ -34,7 +34,18 @@ namespace Twilight.Pages
 
         async void refreshTL(object sender, EventArgs e)
         {
+            timeLine.ItemsSource = await App.tokens.Statuses.HomeTimelineAsync(count => 100);
+            timeLine.IsRefreshing = false;
+        }
 
+        async void fav_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        async void RT_Clicked(object sender, EventArgs e)
+        {
+            
         }
 
         private async void newTweet_Clicked(object sender, EventArgs e)
