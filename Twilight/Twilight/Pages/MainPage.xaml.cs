@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Twilight.Models;
 using Xamarin.Forms;
+using CoreTweet;
+using static CoreTweet.OAuth;
 
 namespace Twilight.Pages
 {
 	public partial class MainPage : TabbedPage
 	{
-		public MainPage()
-		{
-			InitializeComponent();
-		}
-	}
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+    }
 }

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Twilight.Pages.authPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="pin" Placeholder="PINコード" Keyboard="Numeric" MaxLength="7"/>
+            <Button x:Name="submit" Text="送信" HorizontalOptions="Center" Clicked="submit_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

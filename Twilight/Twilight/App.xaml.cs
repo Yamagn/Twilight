@@ -1,13 +1,15 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using CoreTweet;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace Twilight
 {
-	public partial class App : Application
+    public partial class App : Application
 	{
-		public App ()
+        public static Tokens tokens;
+        public App ()
 		{
 			InitializeComponent();
 

@@ -4,11 +4,11 @@
              x:Class="Twilight.Pages.TweetPage"
              Title="ツイート">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="ツイート" Clicked="tweet_Clicked"/>
+        <ToolbarItem x:Name="tweetButton" Text="ツイート" Clicked="tweet_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Editor x:Name="tweetContent" Placeholder="いまなにしてる？" IsEnabled="True" AutoSize="TextChanges" HorizontalOptions="Fill" VerticalOptions="Fill" TextChanged="Content_Changed"/>
+            <Editor x:Name="tweetContent" Placeholder="いまなにしてる？" IsEnabled="True" AutoSize="TextChanges" HorizontalOptions="Fill" VerticalOptions="Fill"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
