@@ -7,10 +7,22 @@
         <ToolbarItem Icon="create_new.png" Clicked="newTweet_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="This is HomePage!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ListView x:Name="timeLine" ItemSelected="tweet_Selected" IsPullToRefreshEnabled="True" Refreshing="refreshTL" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding User.ProfileImageUrl}" HeightRequest="20"/>
+                                <Label Text="{Binding User.Name}" VerticalOptions="Start" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                <Label Text="{Binding User.ScreenName}" VerticalOptions="Start" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                
+                            </StackLayout>
+                            <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center" LineBreakMode="CharacterWrap"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>
