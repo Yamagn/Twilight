@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Twilight.Pages"
+             x:Class="Twilight.Pages.MainPage">
+    <TabbedPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0" />
+    </TabbedPage.Padding>
+    <TabbedPage.Children>
+        <NavigationPage Icon="home.png">
+            <x:Arguments>
+                <local:homePage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Icon="bell.png">
+            <x:Arguments>
+                <local:notifyPage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Icon="search.png">
+            <x:Arguments>
+                <local:searchPage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Icon="user_male.png">
+            <x:Arguments>
+                <local:plofilePage/>
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>
