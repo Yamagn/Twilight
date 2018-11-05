@@ -23,7 +23,8 @@ namespace Twilight.Pages
             }
             else
             {
-                timeLine.ItemsSource = await App.tokens.Statuses.HomeTimelineAsync(count => 100);
+                var statuses = await App.tokens.Statuses.HomeTimelineAsync(count => 100);
+                timeLine.ItemsSource = statuses;
             }
         }
 

@@ -1,7 +1,5 @@
 ﻿using System;
-using Twilight.Models;
 using CoreTweet;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,7 +19,8 @@ namespace Twilight.Pages
             {
                 return;
             }
-            App.tokens.Statuses.Update(status => tweetContent.Text);
+            MediaUploadResult image = new MediaUploadResult();
+            await App.tokens.Statuses.UpdateAsync(status => tweetContent.Text);
             await Navigation.PopAsync();
         }
 	}
