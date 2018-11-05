@@ -12,9 +12,14 @@ namespace Twilight.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class plofilePage : ContentPage
 	{
-		public plofilePage ()
-		{
-			InitializeComponent ();
-		}
+        public plofilePage()
+        {
+            InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+        }
 	}
 }

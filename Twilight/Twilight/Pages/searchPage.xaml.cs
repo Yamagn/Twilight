@@ -16,5 +16,14 @@ namespace Twilight.Pages
 		{
 			InitializeComponent ();
 		}
-	}
+
+        async void serachTweet(object sender, EventArgs e)
+        {
+            string word = searchWord.Text;
+            await Navigation.PushAsync(new searchResultPage
+            {
+                BindingContext = word as string
+            });
+        }
+    }
 }

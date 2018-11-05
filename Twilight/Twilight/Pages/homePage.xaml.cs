@@ -1,5 +1,6 @@
 ﻿using System;
 using Twilight.Models;
+using CoreTweet;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,9 +29,12 @@ namespace Twilight.Pages
             }
         }
 
-        async void tweet_Selected(object sender, ItemTappedEventArgs e)
+        async void tweet_Selected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            await Navigation.PushAsync(new tweetDetailPage
+            {
+                BindingContext = e.SelectedItem as Status
+            });
         }
 
         async void refreshTL(object sender, EventArgs e)

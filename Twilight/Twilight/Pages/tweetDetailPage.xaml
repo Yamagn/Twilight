@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Twilight.Pages.tweetDetailPage">
     <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="{Binding User.ProfileImageUrl}" VerticalOptions="Start" HorizontalOptions="Start" Margin="10, 10, 10, 10" HeightRequest="50" WidthRequest="50"/>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{Binding User.Name}" HorizontalOptions="Start" VerticalOptions="Start" Margin="5, 5, 5, 5" FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
+                    <Label Text="{Binding User.ScreenName}" HorizontalOptions="Start" VerticalOptions="Start" Margin="5, 5, 5, 5" TextColor="Gray" FontSize="Default"/>
+                </StackLayout>
+            </StackLayout>
+            <Label Text="{Binding Text}" HorizontalOptions="Start" VerticalOptions="Start" Margin="5, 5, 5, 5" FontAttributes="Bold" FontSize="Large" TextColor="Black"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

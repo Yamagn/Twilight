@@ -5,9 +5,7 @@
              Title="検索">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is searchPage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <SearchBar x:Name="searchWord" Placeholder="キーワード検索" SearchButtonPressed="serachTweet"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Twilight.Pages.searchResultPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="searchWord" Placeholder="{Binding BindingContext}" SearchButtonPressed="serachTweet"/>
+            <ListView x:Name="searchTweets" IsPullToRefreshEnabled="True" Refreshing="refreshSearch" ItemSelected="tweet_Selected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding User.ProfileImageUrl}" HeightRequest="30" WidthRequest="30" VerticalOptions="Start" Margin="5, 5, 5, 0"/>
+                                <StackLayout x:Name="stack" Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding User.Name}" VerticalOptions="Start" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                        <Label Text="{Binding User.ScreenName}" VerticalOptions="Start" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding Text}" VerticalOptions="Start" HorizontalOptions="Start" LineBreakMode="CharacterWrap"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Button Image="heart.png" Clicked="fav_Clicked" HeightRequest="16" WidthRequest="16"/>
+                                        <Label Text="{Binding FavoriteCount}"/>
+                                        <Button Image="retweet.png" Clicked="RT_Clicked" HeightRequest="16" WidthRequest="16"/>
+                                        <Label Text="{Binding RetweetCount}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
