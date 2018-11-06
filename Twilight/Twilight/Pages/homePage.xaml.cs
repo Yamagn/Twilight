@@ -24,6 +24,7 @@ namespace Twilight.Pages
             }
             else
             {
+                App.user = await App.tokens.Users.ShowAsync(user_id => App.tokens.UserId, screen_name => App.tokens.ScreenName);
                 var statuses = await App.tokens.Statuses.HomeTimelineAsync(count => 100);
                 timeLine.ItemsSource = statuses;
             }

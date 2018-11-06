@@ -4,8 +4,52 @@
              x:Class="Twilight.Pages.plofilePage"
              Title="プロフィール">
     <ContentPage.Content>
-        <StackLayout>
-            
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout BackgroundColor="WhiteSmoke">
+                    <Image x:Name="headerImage" Source="{Binding ProfileBannerUrl}"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Image x:Name="userImage" HorizontalOptions="Start" VerticalOptions="Start" Margin="10, 10, 5, 10" HeightRequest="80"/>
+                        <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Margin="5, 10, 10, 10">
+                            <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                            <Label Text="{Binding ScreenName}"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <Label Text="{Binding Description}" LineBreakMode="CharacterWrap" />
+                    <Label Text="{Binding Url}"/>
+                    <Label Text="{Binding Location}"/>
+                    <StackLayout Orientation="Horizontal" Margin="0, 0, 10, 0">
+                        <Label x:Name="friends" HorizontalOptions="StartAndExpand"/>
+                        <Label x:Name="followers" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+                    
+                </StackLayout>
+                <ListView x:Name="userTimeLine" ItemSelected="tweet_Selected" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding User.ProfileImageUrl}" HeightRequest="30" WidthRequest="30" VerticalOptions="Start" Margin="5, 5, 5, 0"/>
+                                    <StackLayout x:Name="stack" Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding User.Name}" VerticalOptions="Start" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                            <Label Text="{Binding User.ScreenName}" VerticalOptions="Start" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding Text}" VerticalOptions="Start" HorizontalOptions="Start" LineBreakMode="CharacterWrap"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Button Image="heart.png" HeightRequest="16" WidthRequest="16"/>
+                                            <Label Text="{Binding FavoriteCount}"/>
+                                            <Button Image="retweet.png" HeightRequest="16" WidthRequest="16"/>
+                                            <Label Text="{Binding RetweetCount}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>

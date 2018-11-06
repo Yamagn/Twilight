@@ -4,19 +4,18 @@ using Twilight.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Twilight;
-using static CoreTweet.OAuth;
 
 namespace Twilight.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class authPage : ContentPage
 	{
-        private OAuthSession session;
+        private OAuth.OAuthSession session;
 		public authPage ()
 		{
 			InitializeComponent ();
 
-            session = AuthorizeAsync(Key.consumerKey, Key.consumerSecret).Result;
+            session = OAuth.AuthorizeAsync(Key.consumerKey, Key.consumerSecret).Result;
             Device.OpenUri(new Uri(session.AuthorizeUri.AbsoluteUri));
         }
 

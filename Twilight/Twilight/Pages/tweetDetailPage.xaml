@@ -10,6 +10,7 @@
                 </StackLayout>
             </StackLayout>
             <Label Text="{Binding Text}" HorizontalOptions="Start" VerticalOptions="Start" Margin="5, 5, 5, 5" FontAttributes="Bold" FontSize="Large" TextColor="Black"/>
+            <Label x:Name="createdDate" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

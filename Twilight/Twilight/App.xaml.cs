@@ -9,6 +9,7 @@ namespace Twilight
     public partial class App : Application
 	{
         public static Tokens tokens;
+        public static User user;
         public App ()
 		{
 			InitializeComponent();
