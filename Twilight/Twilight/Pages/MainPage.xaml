@@ -23,7 +23,7 @@
                 <local:searchPage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Icon="user_male.png">
+        <NavigationPage Icon="user.png">
             <x:Arguments>
                 <local:plofilePage/>
             </x:Arguments>

@@ -11,6 +11,17 @@
             </StackLayout>
             <Label Text="{Binding Text}" HorizontalOptions="Start" VerticalOptions="Start" Margin="5, 5, 5, 5" FontAttributes="Bold" FontSize="Large" TextColor="Black"/>
             <Label x:Name="createdDate" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding RetweetCount}" FontAttributes="Bold" Margin="5,5,5,5" HorizontalOptions="Start"/>
+                <Label Text="リツイート" HorizontalOptions="Start"/>
+                <Label Text="{Binding FavoliteCount}" FontAttributes="Bold" HorizontalOptions="Start" Margin="5,5,5,5"/>
+                <Label Text="いいね" HorizontalOptions="Start"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="rep" Image="comment.png" HeightRequest="20" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"/>
+                <Button x:Name="RT" Image="retweet.png" HeightRequest="20" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"/>
+                <Button x:Name="fav" Image="heart.png" HeightRequest="20" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

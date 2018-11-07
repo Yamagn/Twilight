@@ -12,7 +12,7 @@ namespace Twilight.Pages
             InitializeComponent();
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             string[] vs = (BindingContext as Status).CreatedAt.ToString().Split(' ');

@@ -37,10 +37,10 @@
                                         </StackLayout>
                                         <Label Text="{Binding Text}" VerticalOptions="Start" HorizontalOptions="Start" LineBreakMode="CharacterWrap"/>
                                         <StackLayout Orientation="Horizontal">
-                                            <Button Image="heart.png" HeightRequest="16" WidthRequest="16"/>
-                                            <Label Text="{Binding FavoriteCount}"/>
-                                            <Button Image="retweet.png" HeightRequest="16" WidthRequest="16"/>
+                                            <Button Image="retweet.png" HeightRequest="16" WidthRequest="16" BackgroundColor="Transparent"/>
                                             <Label Text="{Binding RetweetCount}"/>
+                                            <Button Image="heart.png" HeightRequest="16" WidthRequest="16" BackgroundColor="Transparent"/>
+                                            <Label Text="{Binding FavoriteCount}"/>
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
