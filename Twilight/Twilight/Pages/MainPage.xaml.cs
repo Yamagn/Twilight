@@ -1,7 +1,4 @@
-﻿using Twilight.Models;
-using Xamarin.Forms;
-using CoreTweet;
-using static CoreTweet.OAuth;
+﻿using Xamarin.Forms;
 
 namespace Twilight.Pages
 {

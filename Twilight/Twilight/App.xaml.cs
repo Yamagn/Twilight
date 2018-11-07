@@ -14,7 +14,7 @@ namespace Twilight
 		{
 			InitializeComponent();
 
-			MainPage = new Pages.MainPage();
+			MainPage = new Pages.homeMasterDetailPage();
 		}
 
 		protected override void OnStart ()

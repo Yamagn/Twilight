@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             Padding="0, 40, 0, 0"
+             x:Class="Twilight.Pages.homeMasterPage"
+             Title="メニュー">
+    <StackLayout VerticalOptions="Start">
+        <Image Source="{Binding ProfileImageUrl}" VerticalOptions="Start" HorizontalOptions="Start" Margin="10, 10, 10, 10"/>
+        <Label Text="{Binding Name}" VerticalOptions="Start" HorizontalOptions="Start" Margin="10, 10, 10, 0"/>
+        <Label Text="{Binding ScreenName}" VerticalOptions="Start" HorizontalOptions="Start" Margin="10, 0, 10, 10"/>
+        <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                     <ImageCell Text="{Binding Title}" ImageSource="{Binding Image}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
