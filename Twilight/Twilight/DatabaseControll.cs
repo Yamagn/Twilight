@@ -12,7 +12,7 @@ namespace Twilight
         public DatabaseControll(string dbPath)
         {
             database = new SQLiteAsyncConnection(dbPath);
-            database.CreateTableAsync<Token>(); 
+            database.CreateTableAsync<Token>().Wait(); 
         }
         
         public Task<List<Token>> GetItemsAsync()

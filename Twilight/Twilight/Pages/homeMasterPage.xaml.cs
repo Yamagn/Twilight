@@ -23,15 +23,5 @@ namespace Twilight.Pages
             };
             listView.ItemsSource = homeMasterPageItems;
         }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            if (App.user != null)
-            {
-                BindingContext = App.user;
-            }
-        }
     }
 }

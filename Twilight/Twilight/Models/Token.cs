@@ -7,6 +7,7 @@ namespace Twilight.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public Tokens myToken { get; set; }
+        public string accessToken { get; set; }
+        public string accessSecret { get; set; }
     }
 }

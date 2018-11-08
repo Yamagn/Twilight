@@ -26,8 +26,11 @@ namespace Twilight.Pages
             {   
                 Tokens _tokens = await OAuth.GetTokensAsync(session, pincode);
                 App.tokens = _tokens;
-                var tk = new Token();
-                tk.myToken = _tokens;
+                var tk = new Token
+                {
+                    accessToken = _tokens.AccessToken,
+                    accessSecret = _tokens.AccessTokenSecret
+                };
                 await App.TokenDatabase.SaveItemAsync(tk);
             
                 if (App.tokens != null)

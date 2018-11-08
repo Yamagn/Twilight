@@ -18,13 +18,23 @@ namespace Twilight.Pages
         {
             base.OnAppearing();
 
-            if(App.tokens == null)
+            var token = await App.TokenDatabase.GetItemsAsync();
+            if(token.Count == 0)
             {
                 await Navigation.PushAsync(new authPage());
             }
+            else if(App.tokens == null)
+            {
+                App.tokens = Tokens.Create(Key.consumerKey, Key.consumerSecret, token[0].accessToken, token[0].accessSecret);
+                var userResponse = await App.tokens.Account.VerifyCredentialsAsync();
+                App.tokens.ScreenName = userResponse.ScreenName;
+                App.tokens.UserId = (long)userResponse.Id;
+                App.user = userResponse;
+                var statuses = await App.tokens.Statuses.HomeTimelineAsync(count => 100);
+                timeLine.ItemsSource = statuses;
+            }
             else
             {
-                App.user = await App.tokens.Users.ShowAsync(user_id => App.tokens.UserId, screen_name => App.tokens.ScreenName);
                 var statuses = await App.tokens.Statuses.HomeTimelineAsync(count => 100);
                 timeLine.ItemsSource = statuses;
             }

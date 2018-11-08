@@ -11,23 +11,14 @@ namespace Twilight
     public partial class App : Application
 	{
         public static Tokens tokens;
-        public static User user;
-        public static DatabaseControll tokenDatabase;
+        public static UserResponse user;
+        private static DatabaseControll tokenDatabase;
 
         public App ()
 		{
 			InitializeComponent();
 
 			MainPage = new Pages.homeMasterDetailPage();
-            if(tokenDatabase == null)
-            {
-                return;
-            }
-            var tk = tokenDatabase.GetItemsAsync().Result;
-            if (tk != null)
-            {
-                tokens = tk[0].myToken;
-            }
 		}
 
         public static DatabaseControll TokenDatabase
