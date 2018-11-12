@@ -2,12 +2,15 @@
 using CoreTweet;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Twilight;
+using System.IO;
 
 namespace Twilight.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TweetPage : ContentPage
 	{
+        FileInfo[] info = new FileInfo[4];
         public TweetPage ()
 		{
 			InitializeComponent ();
@@ -26,7 +29,12 @@ namespace Twilight.Pages
 
         async void Media_Clicked(object sender, EventArgs e)
         {
-
+            if(info.Length >= 4)
+            {
+                return;
+            }
+            var path = await GalleryClient.PickPhotoAsync();
+            info.SetValue(new FileInfo(path), info.Length);
         }
 	}
 }
