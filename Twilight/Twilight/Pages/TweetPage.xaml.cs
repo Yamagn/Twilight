@@ -13,7 +13,7 @@ namespace Twilight.Pages
 			InitializeComponent ();
 		}
 
-        async void tweet_Clicked(object sender, EventArgs e)
+        async void Tweet_Clicked(object sender, EventArgs e)
         {
             if(tweetContent.Text == "")
             {
@@ -22,6 +22,11 @@ namespace Twilight.Pages
             MediaUploadResult image = new MediaUploadResult();
             await App.tokens.Statuses.UpdateAsync(status => tweetContent.Text);
             await Navigation.PopAsync();
+        }
+
+        async void Media_Clicked(object sender, EventArgs e)
+        {
+
         }
 	}
 }

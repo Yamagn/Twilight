@@ -29,6 +29,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)DatabaseControll.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GalleryClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Key.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\authPage.xaml.cs">
       <DependentUpon>authPage.xaml</DependentUpon>
@@ -72,6 +73,7 @@
       <DependentUpon>homeMasterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\homeMasterPageItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PhotoClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\homePage.xaml">

@@ -34,5 +34,9 @@
 	<string>Twilight</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+  	<string>This app accesses the photo library to analyze facial expressions.</string>
+	<key>NSCameraUsageDescription</key>
+  	<string>This app accesses the camera to analyze facial expressions.</string>
 </dict>
 </plist>
