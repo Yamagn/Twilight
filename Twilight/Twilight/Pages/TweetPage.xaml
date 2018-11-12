@@ -4,7 +4,8 @@
              x:Class="Twilight.Pages.TweetPage"
              Title="ツイート">
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="tweetButton" Text="ツイート" Clicked="tweet_Clicked"/>
+        <ToolbarItem x:Name="tweetButton" Text="ツイート" Clicked="Tweet_Clicked"/>
+        <ToolbarItem x:Name="mediaButton" Text="メディア" Clicked="Media_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
